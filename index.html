@@ -14,9 +14,9 @@ p{margin:0 0 1em;}
 img{max-width:100%;display:block;transition:transform 0.3s ease, box-shadow 0.3s ease;}
 
 /* HERO */
-header{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;text-align:center;padding:100px 20px 120px;position:relative;overflow:hidden;}
-header h1{font-size:2.8em;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.3s;}
-header p{font-size:1.2em;margin-top:20px;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.6s;}
+header{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;text-align:center;padding:120px 20px 140px;position:relative;overflow:hidden;}
+header h1{font-size:3em;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.3s;}
+header p{font-size:1.3em;margin-top:20px;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.6s;}
 .hero-cta{margin-top:40px;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.9s;display:inline-block;position:relative;}
 .hero-cta button{padding:16px 35px;font-size:1.1em;border-radius:10px;border:none;background:#fff;color:#4CAF50;font-weight:600;cursor:pointer;transition:all 0.3s;}
 .hero-cta button:hover{background:#e6f5ea;transform: scale(1.05) rotate(-1deg);}
@@ -73,12 +73,20 @@ button:hover{background:#45a049;transform:scale(1.05) rotate(-1deg);}
 /* TESTIMONIAL */
 .testimonial{background:#e8f5e9;padding:15px 20px;border-left:5px solid #4CAF50;margin:20px 0;border-radius:8px;font-style:italic;color:#333;}
 
+/* FEATURES SECTION */
+.features{display:flex;flex-wrap:wrap;justify-content:space-between;margin:50px 0;}
+.feature-box{background:#fff;border-radius:12px;flex:1 1 30%;margin:10px;padding:25px;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.3s;}
+.feature-box:hover{transform:translateY(-5px);}
+.feature-box h4{margin-bottom:15px;}
+.feature-box p{color:#555;}
+
 /* FOOTER */
 footer{background:#333;color:#fff;padding:50px 20px;text-align:center;}
 footer p{margin-bottom:10px;font-size:0.9em;}
 footer a{color:#4CAF50;}
 
 /* MOBILE OPTIMIZATION */
+@media(max-width:900px){.features{flex-direction:column;}.feature-box{flex:1 1 100%;}}
 @media(max-width:600px){
   header h1{font-size:1.8em;}
   header p{font-size:1em;}
@@ -125,7 +133,23 @@ footer a{color:#4CAF50;}
     <div class="testimonial">“I followed this guide for 7 days and already feel more focused!” — Jane D.</div>
   </div>
 
-  <!-- Blogs 4–6 -->
+  <!-- FEATURES / BENEFITS -->
+  <div class="features">
+    <div class="feature-box">
+      <h4>🧠 Boost Memory</h4>
+      <p>Simple techniques to sharpen your mind and remember more in less time.</p>
+    </div>
+    <div class="feature-box">
+      <h4>👂 Protect Hearing</h4>
+      <p>Easy steps to safeguard your hearing and stay alert every day.</p>
+    </div>
+    <div class="feature-box">
+      <h4>⏱ Quick Daily Exercises</h4>
+      <p>Spend just 10 minutes a day to see measurable results in focus and clarity.</p>
+    </div>
+  </div>
+
+  <!-- Blog Posts 4–6 -->
   <div class="blog-post" id="blog4">
     <h3>5 Brain Exercises to Sharpen Focus</h3>
     <p>Discover quick exercises you can do daily to improve mental clarity.</p>
@@ -222,23 +246,6 @@ window.addEventListener('scroll',()=>{
     s.style.transform=`translateY(${Math.sin(scrollY/100 + i)*20}px) translateX(${Math.cos(scrollY/100 + i)*15}px)`;
   });
 });
-
-// BLOG IMAGE & BUTTON ANIMATIONS
-const blogObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      const blogImg = entry.target.querySelector('img');
-      const btns = entry.target.querySelectorAll('button, a');
-      entry.target.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = 'translateY(0)';
-      if(blogImg){ blogImg.style.transition = 'transform 0.6s ease, box-shadow 0.6s ease'; blogImg.style.transform = 'scale(1.05)'; setTimeout(()=>{blogImg.style.transform = 'scale(1)';}, 600);}
-      btns.forEach((b,i)=>{b.style.transition = `transform 0.5s ease ${i*0.1}s`; b.style.transform = 'translateY(-3px)'; setTimeout(()=>{b.style.transform='translateY(0)';}, 500+i*100);});
-      blogObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:0.3});
-document.querySelectorAll('.blog-post').forEach(bp=>blogObserver.observe(bp));
 </script>
 </body>
 </html>
