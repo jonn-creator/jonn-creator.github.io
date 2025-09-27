@@ -83,6 +83,7 @@ button:hover { background:#45a049;}
 #popupForm h3 { margin-top:0; font-size:1.25em; color:#4CAF50;}
 #popupForm button { width:100%;}
 #popupClose { position:absolute; top:12px; right:15px; background:none; border:none; font-size:1.3em; cursor:pointer; color:#888;}
+#popupForm .bonus { font-size:0.9em; margin-top:5px; color:#333;}
 @keyframes popupEnter { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
 
 /* Footer */
@@ -103,10 +104,10 @@ footer a { color:#4CAF50;}
 <div class="shape shape5"></div>
 
 <header>
-  <h1>Unlock Your Brain & Hearing Potential</h1>
-  <p>Download our free guide to improve mental clarity and hearing health today.</p>
+  <h1>Supercharge Your Brain & Hearing in Just 7 Days</h1>
+  <p>Get our FREE expert guide with proven tips to boost focus, memory, and hearing health — start today!</p>
   <div class="hero-cta">
-    <button onclick="scrollToSection('mainForm')">Get My Free Guide</button>
+    <button onclick="scrollToSection('mainForm')">✅ Yes! Send Me My Free Guide</button>
   </div>
 </header>
 
@@ -124,6 +125,7 @@ footer a { color:#4CAF50;}
         <input type="text" name="name" placeholder="First name (optional)" />
         <button type="submit">Sign Up Now</button>
         <div class="msgOdoo"></div>
+        <p>✅ 100% Free — No Spam | ✅ Trusted by Thousands</p>
       </form>
     </div>
   </div>
@@ -131,24 +133,26 @@ footer a { color:#4CAF50;}
   <!-- Blog Sections -->
   <div class="section" id="blogs">
     <div class="blog-post">
-      <h3>Blog Post 1: Brain Boost Tips</h3>
+      <h3>Want Faster Brain Clarity? Grab This Free Guide!</h3>
       <p>Learn quick exercises to sharpen your memory and mental clarity.</p>
       <div class="form-container">
         <form class="optInOdoo" data-form-name="Blog Post 1">
           <input type="email" name="email" placeholder="Your email" required />
           <button type="submit">Get Tips</button>
           <div class="msgOdoo"></div>
+          <p>✅ 100% Free — No Spam</p>
         </form>
       </div>
     </div>
     <div class="blog-post">
-      <h3>Blog Post 2: Hearing Health Secrets</h3>
+      <h3>Protect Your Hearing & Sharpen Focus — Free Tips Inside!</h3>
       <p>Discover easy ways to protect and enhance your hearing.</p>
       <div class="form-container">
         <form class="optInOdoo" data-form-name="Blog Post 2">
           <input type="email" name="email" placeholder="Your email" required />
           <button type="submit">Learn More</button>
           <div class="msgOdoo"></div>
+          <p>✅ 100% Free — No Spam</p>
         </form>
       </div>
     </div>
@@ -171,14 +175,17 @@ footer a { color:#4CAF50;}
 
 </div>
 
+<!-- Popup Form -->
 <div id="popupForm">
   <button id="popupClose">&times;</button>
-  <h3>Wait! Don’t Miss Your Free Guide!</h3>
+  <h3>Don’t Leave Without This Free Brain & Hearing Boost!</h3>
+  <p class="bonus">Bonus: Download our checklist instantly and start seeing results!</p>
   <form class="optInOdoo" data-form-name="Popup Form">
     <input type="email" name="email" placeholder="Your email" required />
     <input type="text" name="name" placeholder="First name (optional)" />
-    <button type="submit">Sign Up Now</button>
+    <button type="submit">Grab My Free Bonus</button>
     <div class="msgOdoo"></div>
+    <p>✅ 100% Free — No Spam</p>
   </form>
 </div>
 
@@ -188,11 +195,11 @@ footer a { color:#4CAF50;}
 </footer>
 
 <script>
-// Configuration
+// Config
 const AFFILIATE_URL = 'https://6c63eby7so29wk6y11m6vk-m6h.hop.clickbank.net';
 const ODOO_URL = 'https://sharpmindguidescom.odoo.com';
 const API_KEY = '74a3b8f5ea170a909ee67094d08c33864bea0e6c';
-const LIST_ID = '2';
+const LIST_ID = 2;
 
 // Data
 const featuresData = [
@@ -202,7 +209,7 @@ const featuresData = [
 ];
 
 const testimonialsData = [
-  { text:'This guide completely changed how I approach my brain health!', author:'Sarah M.' },
+  { text:'After 1 week, my focus improved dramatically and I could hear conversations clearer in noisy rooms!', author:'Sarah M.' },
   { text:'I noticed a difference in my hearing awareness in just a few weeks!', author:'John D.' }
 ];
 
@@ -231,18 +238,38 @@ function scrollToSection(id){document.getElementById(id).scrollIntoView({behavio
 function setupOdooForm(form){
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    const email=form.email.value.trim();
-    const name=form.name.value.trim();
-    const msgDiv=form.querySelector('.msgOdoo');
-    const formName=form.dataset.formName;
-    fetch(`${ODOO_URL}/api/email_marketing_subscribe`,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`},
-      body:JSON.stringify({email,name,list_id:LIST_ID})
-    }).then(res=>{
-      if(res.ok){msgDiv.textContent='Thanks! Redirecting...';console.log(`Conversion: ${formName}, Email: ${email}`); setTimeout(()=>window.location.href=AFFILIATE_URL,900);}
-      else msgDiv.textContent='Error submitting email. Try again.';
-    }).catch(err=>{msgDiv.textContent='Error submitting email. Try again.';});
+    const email = form.email.value.trim();
+    const name = form.name.value.trim();
+    const msgDiv = form.querySelector('.msgOdoo');
+    const formName = form.dataset.formName;
+
+    fetch(`${ODOO_URL}/api/email_marketing_subscribe`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({
+        email: email,
+        name: name,
+        list_ids: [LIST_ID]
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.success || data.id){
+        msgDiv.textContent = 'Thanks! Redirecting you now...';
+        console.log(`Conversion from form: ${formName}, Email: ${email}`);
+        setTimeout(()=>{ window.location.href = AFFILIATE_URL },900);
+      } else {
+        msgDiv.textContent = data.message || 'Error submitting email. Try again.';
+        console.error('Odoo error:', data);
+      }
+    })
+    .catch(err => {
+      console.error('Fetch error:', err);
+      msgDiv.textContent = 'Error submitting email. Try again.';
+    });
   });
 }
 document.querySelectorAll('.optInOdoo').forEach(f=>setupOdooForm(f));
@@ -254,7 +281,7 @@ setTimeout(()=>{popup.style.display='block';},5000);
 document.addEventListener('mouseout', e=>{if(!popup.dataset.shown && e.clientY<5){popup.style.display='block'; popup.dataset.shown=true;}});
 popupClose.addEventListener('click',()=>{popup.style.display='none';});
 
-// Intersection Observer for animations
+// Intersection Observer
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){entry.target.classList.add('visible');}
@@ -264,4 +291,3 @@ document.querySelectorAll('.form-container, .feature, .testimonial, .blog-post')
 </script>
 </body>
 </html>
-
