@@ -6,94 +6,86 @@
 <title>SharpMind Guides - Boost Your Brain & Hearing Health</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* === BASE STYLES === */
-body { font-family:'Inter', sans-serif; margin:0; padding:0; background:#f4f6f8; color:#333; scroll-behavior:smooth; overflow-x:hidden;}
-a { text-decoration:none; color:inherit;}
-h1,h2,h3 { margin:0;}
-p { margin:0 0 1em;}
-img { max-width:100%; display:block;}
+/* BASE STYLES */
+body { font-family:'Inter',sans-serif;margin:0;padding:0;background:#f4f6f8;color:#333;scroll-behavior:smooth;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+h1,h2,h3{margin:0;}
+p{margin:0 0 1em;}
+img{max-width:100%;display:block;transition:transform 0.3s ease, box-shadow 0.3s ease;}
 
-/* === HERO === */
-header { background: linear-gradient(135deg,#4CAF50,#45a049); color:#fff; text-align:center; padding:100px 20px 120px; position:relative; overflow:hidden;}
-header h1 { font-size:2.8em; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards 0.3s; }
-header p { font-size:1.2em; margin-top:20px; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards 0.6s; }
-.hero-cta { margin-top:40px; opacity:0; transform:translateY(30px); animation:fadeUp 1s forwards 0.9s; display:inline-block; position:relative;}
-.hero-cta button { padding:16px 35px; font-size:1.1em; border-radius:10px; border:none; background:#fff; color:#4CAF50; font-weight:600; cursor:pointer; transition:all 0.3s;}
-.hero-cta button:hover { background:#e6f5ea; transform: scale(1.05);}
-.hero-cta button::after { content:'↓'; position:absolute; right:15px; top:50%; transform:translateY(-50%) translateX(0); transition: transform 0.3s; font-size:1.2em; animation:bounceArrow 1.2s infinite;}
-@keyframes bounceArrow {0%,100%{transform:translateY(-50%) translateX(0);}50%{transform:translateY(-45%) translateX(0);}}
+/* HERO */
+header{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;text-align:center;padding:100px 20px 120px;position:relative;overflow:hidden;}
+header h1{font-size:2.8em;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.3s;}
+header p{font-size:1.2em;margin-top:20px;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.6s;}
+.hero-cta{margin-top:40px;opacity:0;transform:translateY(30px);animation:fadeUp 1s forwards 0.9s;display:inline-block;position:relative;}
+.hero-cta button{padding:16px 35px;font-size:1.1em;border-radius:10px;border:none;background:#fff;color:#4CAF50;font-weight:600;cursor:pointer;transition:all 0.3s;}
+.hero-cta button:hover{background:#e6f5ea;transform: scale(1.05) rotate(-1deg);}
+.hero-cta .subtext{display:block;font-size:0.85em;margin-top:5px;color:#e0f0e8;}
+.hero-cta button::after{content:'↓';position:absolute;right:15px;top:50%;transform:translateY(-50%) translateX(0);transition: transform 0.3s;font-size:1.2em;animation:bounceArrow 1.2s infinite;}
+@keyframes bounceArrow{0%,100%{transform:translateY(-50%) translateX(0);}50%{transform:translateY(-45%) translateX(0);}}
 
-/* === FLOATING SHAPES === */
-.shape { position:absolute; border-radius:50%; opacity:0.08; z-index:0; pointer-events:none; filter:blur(60px); animation: floatPremium 20s ease-in-out infinite;}
-.shape1 { width:300px;height:300px;background:#4CAF50;top:10%;left:5%; animation-delay:0s;}
-.shape2 { width:250px;height:250px;background:#45a049;top:40%;right:10%; animation-delay:5s;}
-.shape3 { width:180px;height:180px;background:#81C784;top:75%;left:20%; animation-delay:10s;}
-.shape4 { width:220px;height:220px;background:#A5D6A7;top:20%;right:25%; animation-delay:2s;}
-.shape5 { width:150px;height:150px;background:#C8E6C9;top:60%;left:60%; animation-delay:7s;}
-@keyframes floatPremium {
-  0% { transform: translateY(0) translateX(0) rotate(0deg);}
-  25% { transform: translateY(-20px) translateX(10px) rotate(45deg);}
-  50% { transform: translateY(-10px) translateX(-10px) rotate(90deg);}
-  75% { transform: translateY(20px) translateX(5px) rotate(135deg);}
-  100% { transform: translateY(0) translateX(0) rotate(360deg);}
+/* FLOATING SHAPES */
+.shape{position:absolute;border-radius:50%;opacity:0.08;z-index:0;pointer-events:none;filter:blur(60px);animation:floatPremium 20s ease-in-out infinite;}
+.shape1{width:300px;height:300px;background:#4CAF50;top:10%;left:5%;animation-delay:0s;}
+.shape2{width:250px;height:250px;background:#45a049;top:40%;right:10%;animation-delay:5s;}
+.shape3{width:180px;height:180px;background:#81C784;top:75%;left:20%;animation-delay:10s;}
+.shape4{width:220px;height:220px;background:#A5D6A7;top:20%;right:25%;animation-delay:2s;}
+.shape5{width:150px;height:150px;background:#C8E6C9;top:60%;left:60%;animation-delay:7s;}
+@keyframes floatPremium{
+  0%{transform:translateY(0) translateX(0) rotate(0deg);}
+  25%{transform:translateY(-20px) translateX(10px) rotate(45deg);}
+  50%{transform:translateY(-10px) translateX(-10px) rotate(90deg);}
+  75%{transform:translateY(20px) translateX(5px) rotate(135deg);}
+  100%{transform:translateY(0) translateX(0) rotate(360deg);}
 }
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
-@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+/* CONTAINER */
+.container{max-width:1100px;margin:0 auto;padding:60px 20px;}
 
-/* === CONTAINER === */
-.container { max-width:1100px; margin:0 auto; padding:60px 20px; }
+/* FORMS */
+.form-container{background:#fff;padding:35px 45px;margin-bottom:50px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.1);transition: transform 0.3s, box-shadow 0.3s;opacity:0;transform:translateY(30px);}
+.form-container.visible{opacity:1;transform:translateY(0);}
+.form-container:hover{transform: translateY(-7px) scale(1.02);box-shadow: 0 12px 30px rgba(0,0,0,0.15);}
+input{width:100%;padding:15px 18px;margin:10px 0;border-radius:8px;border:1px solid #ccc;font-size:1em;transition:border 0.3s, box-shadow 0.3s;}
+input:focus{border-color:#4CAF50;outline:none;box-shadow:0 0 10px rgba(76,175,80,0.3);}
+button{padding:15px 22px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:1em;cursor:pointer;transition: all 0.3s; width:100%; }
+button:hover{background:#45a049;transform:scale(1.05) rotate(-1deg);}
 
-/* === SECTIONS === */
-.section { margin-bottom:80px; }
-.section h2 { color:#4CAF50; margin-bottom:40px; text-align:center; font-size:2em; opacity:0; transform:translateY(20px); animation:fadeUp 1s forwards; }
+/* GUIDE IMAGE */
+.guide-image-container{text-align:center;margin:40px 0;transition:transform 0.4s ease, box-shadow 0.4s ease;}
+.guide-image-container img:hover{transform:scale(1.03) rotate(-0.5deg);box-shadow:0 15px 30px rgba(0,0,0,0.2);}
 
-/* === FORMS === */
-.form-container { background:#fff; padding:35px 45px; margin-bottom:50px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; opacity:0; transform:translateY(30px);}
-.form-container.visible { opacity:1; transform:translateY(0);}
-.form-container:hover { transform: translateY(-7px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.15);}
-input { width:100%; padding:15px 18px; margin:10px 0; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:border 0.3s, box-shadow 0.3s;}
-input:focus { border-color:#4CAF50; outline:none; box-shadow:0 0 10px rgba(76,175,80,0.3);}
-button { padding:15px 22px; background:#4CAF50; color:#fff; border:none; border-radius:8px; font-size:1em; cursor:pointer; transition: all 0.3s; width:100%; }
-button:hover { background:#45a049;}
+/* BLOG POSTS */
+.blog-post{background:#fff;padding:25px 30px;border-radius:12px;margin-bottom:25px;box-shadow:0 4px 15px rgba(0,0,0,0.08);opacity:0;transform:translateY(30px);transition: transform 0.3s, box-shadow 0.3s;}
+.blog-post.visible{opacity:1;transform:translateY(0);}
+.blog-post:hover{transform: translateY(-5px) scale(1.01);box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+.blog-post img:hover{transform:scale(1.02) rotate(-0.3deg);}
+.blog-post h3::before{content:'🧠 ';} /* small icon for blogs */
 
-/* === GUIDE IMAGE === */
-.guide-image-container { text-align:center; margin:40px 0; }
-.guide-image-container img { max-width:100%; height:auto; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+/* POPUP */
+#popupForm{position:fixed;bottom:20px;right:20px;width:340px;max-width:90%;background:#fff;border-radius:12px;box-shadow:0 6px 25px rgba(0,0,0,0.25);padding:30px;display:none;z-index:9999;animation:popupEnter 0.5s ease;}
+#popupForm h3{margin-top:0;font-size:1.25em;color:#4CAF50;}
+#popupForm button{width:100%;}
+#popupClose{position:absolute;top:12px;right:15px;background:none;border:none;font-size:1.3em;cursor:pointer;color:#888;}
+#popupForm .bonus{font-size:0.9em;margin-top:5px;color:#333;}
 
-/* === FEATURES === */
-.features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:35px; }
-.feature { background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); text-align:center; transition: transform 0.3s, box-shadow 0.3s; opacity:0; transform:translateY(30px);}
-.feature img { height:65px; margin-bottom:20px;}
-.feature h3 { color:#4CAF50; margin-bottom:12px;}
-.feature p { color:#555; font-size:0.95em;}
-.feature.visible { opacity:1; transform:translateY(0);}
-.feature:hover { transform: translateY(-7px) scale(1.03); box-shadow:0 12px 25px rgba(0,0,0,0.15); }
+/* TESTIMONIAL */
+.testimonial{background:#e8f5e9;padding:15px 20px;border-left:5px solid #4CAF50;margin:20px 0;border-radius:8px;font-style:italic;color:#333;}
 
-/* === BLOGS === */
-.blog-post { background:#fff; padding:25px 30px; border-radius:12px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.08); opacity:0; transform:translateY(30px);}
-.blog-post.visible { opacity:1; transform:translateY(0);}
-.blog-post:hover { transform: translateY(-5px) scale(1.01); box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+/* FOOTER */
+footer{background:#333;color:#fff;padding:50px 20px;text-align:center;}
+footer p{margin-bottom:10px;font-size:0.9em;}
+footer a{color:#4CAF50;}
 
-/* === TESTIMONIALS === */
-.testimonials { background:#e6f5ea; padding:60px 20px; border-radius:12px; }
-.testimonial { text-align:center; max-width:500px; margin:0 auto 40px; opacity:0; transform:translateY(30px); transition: all 0.6s ease; }
-.testimonial.visible { opacity:1; transform:translateY(0); }
-.testimonial p { font-style:italic; color:#333; font-size:1em; }
-.testimonial h4 { color:#4CAF50; margin-top:12px; font-weight:600; }
-.testimonial:hover { transform: scale(1.02); }
-
-/* === POPUP === */
-#popupForm { position:fixed; bottom:20px; right:20px; width:340px; max-width:90%; background:#fff; border-radius:12px; box-shadow:0 6px 25px rgba(0,0,0,0.25); padding:30px; display:none; z-index:9999; animation:popupEnter 0.5s ease;}
-#popupForm h3 { margin-top:0; font-size:1.25em; color:#4CAF50;}
-#popupForm button { width:100%;}
-#popupClose { position:absolute; top:12px; right:15px; background:none; border:none; font-size:1.3em; cursor:pointer; color:#888;}
-#popupForm .bonus { font-size:0.9em; margin-top:5px; color:#333;}
-@keyframes popupEnter { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-
-/* === FOOTER === */
-footer { background:#333; color:#fff; padding:50px 20px; text-align:center;}
-footer p { margin-bottom:10px; font-size:0.9em;}
-footer a { color:#4CAF50;}
+/* MOBILE OPTIMIZATION */
+@media(max-width:600px){
+  header h1{font-size:1.8em;}
+  header p{font-size:1em;}
+  .form-container{padding:20px;}
+  .hero-cta button{width:100%;}
+  #popupForm{width:90%;bottom:15px;right:5%;}
+}
 </style>
 </head>
 <body>
@@ -107,14 +99,17 @@ footer a { color:#4CAF50;}
 
 <!-- HERO -->
 <header>
-  <h1>Unlock Peak Brain Performance Today</h1>
+  <h1>Unlock Your Brain’s Full Potential — Free Expert Guide Inside!</h1>
   <p>Free guide reveals secrets to sharpen your mind and protect your hearing fast</p>
   <div class="hero-cta">
-    <button onclick="document.getElementById('mainForm').scrollIntoView({behavior:'smooth'})">Grab My Free Brain Boost</button>
+    <button onclick="document.getElementById('mainForm').scrollIntoView({behavior:'smooth'})">Get My Free Brain & Hearing Guide Now</button>
+    <span class="subtext">Limited spots today — start improving now!</span>
+  </div>
+  <div class="guide-image-container">
+    <img src="YOUR_EXISTING_IMAGE_URL_HERE" alt="Brain & Hearing Guide">
   </div>
 </header>
 
-<!-- MAIN CONTENT -->
 <div class="container">
 
   <!-- Main Form -->
@@ -126,43 +121,32 @@ footer a { color:#4CAF50;}
       <button type="submit">Get My Free Guide</button>
       <div class="msgOdoo"></div>
     </form>
-    <p>✅ 100% Free — No Spam</p>
+    <p>✅ 100% Free — No Spam. Join 5,000+ readers improving their brain & hearing.</p>
+    <div class="testimonial">“I followed this guide for 7 days and already feel more focused!” — Jane D.</div>
   </div>
 
-  <!-- Features -->
-  <div class="features" id="features"></div>
-
-  <!-- Middle Guide Image -->
-  <div class="guide-image-container">
-    <img src="YOUR_IMAGE_URL_HERE" alt="Brain & Hearing Guide">
-  </div>
-
-  <!-- Blog posts 1–6 -->
-  <div class="blog-post">
-    <h3>Boost Your Focus & Memory Today</h3>
-    <p>Discover practical exercises to sharpen your mind daily.</p>
+  <!-- Blogs 4–6 -->
+  <div class="blog-post" id="blog4">
+    <h3>5 Brain Exercises to Sharpen Focus</h3>
+    <p>Discover quick exercises you can do daily to improve mental clarity.</p>
     <div class="form-container">
-      <form class="optInOdoo" data-form-name="Blog Post 1">
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Send Me the Guide</button>
-        <div class="msgOdoo"></div>
-      </form>
+      <p>Learn the 5 exercises that boost memory in just 10 minutes/day → <a href="#mainForm">Get your free guide here</a></p>
     </div>
   </div>
 
   <div class="blog-post" id="blog5">
-    <h3>Protect Your Hearing & Sharpen Focus</h3>
-    <p>Learn easy ways to protect your hearing and stay alert.</p>
+    <h3>7 Simple Steps to Protect Your Hearing</h3>
+    <p>Learn easy ways to improve your hearing and stay alert.</p>
     <div class="form-container">
-      <p>Boost your hearing with our expert tips! <a href="#mainForm">Download the guide →</a></p>
+      <p>Protect your hearing naturally → <a href="#mainForm">Download the guide</a></p>
     </div>
   </div>
 
-  <div class="blog-post">
+  <div class="blog-post" id="blog6">
     <h3>Daily Habits That Improve Cognitive Performance</h3>
     <p>Small lifestyle changes that enhance memory and focus naturally.</p>
     <div class="form-container">
-      <p>Start improving your brain today! <a href="#mainForm">Grab the free guide →</a></p>
+      <p>Boost your brain power every day → <a href="#mainForm">Grab the free guide</a></p>
     </div>
   </div>
 
@@ -179,90 +163,82 @@ footer a { color:#4CAF50;}
     <div class="msgOdoo"></div>
   </form>
   <div class="bonus">Limited-time free download — start improving today!</div>
+  <div class="testimonial">“I noticed improved focus within days. Highly recommend!” — Mark S.</div>
 </div>
 
-<!-- Footer -->
 <footer>
   <p>© 2025 SharpMind Guides. All rights reserved.</p>
   <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
 </footer>
 
-<!-- SCRIPTS -->
 <script>
-const AFFILIATE_URL = 'https://6c63eby7so29wk6y11m6vk-m6h.hop.clickbank.net';
-const ODOO_URL = 'https://sharpmindguidescom.odoo.com';
-const API_KEY = '74a3b8f5ea170a909ee67094d08c33864bea0e6c';
-const LIST_ID = 2;
+// CONFIG
+const AFFILIATE_URL='https://6c63eby7so29wk6y11m6vk-m6h.hop.clickbank.net';
+const ODOO_URL='https://sharpmindguidescom.odoo.com';
+const API_KEY='74a3b8f5ea170a909ee67094d08c33864bea0e6c';
+const LIST_ID=2;
 
-// Odoo Form Submission
-function setupOdooForm(form) {
-  form.addEventListener('submit', function(e) {
+// ODOO FORM SUBMISSION
+function setupOdooForm(form){
+  form.addEventListener('submit',function(e){
     e.preventDefault();
-    const email = form.email.value.trim();
-    const name = form.name.value.trim();
-    const msgDiv = form.querySelector('.msgOdoo');
-    const formName = form.dataset.formName;
-
-    if (!email) { msgDiv.textContent = 'Please enter a valid email.'; return; }
-    msgDiv.textContent = 'Submitting...';
-
-    fetch(`${ODOO_URL}/api/email_marketing_subscribe`, {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}` },
-      body: JSON.stringify({ email:email, name:name, list_id:LIST_ID })
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log('Odoo Response:', data);
-      if (data.success || data.id) {
-        msgDiv.textContent = 'Thanks! Redirecting you now...';
-        setTimeout(()=>{ window.location.href = AFFILIATE_URL; }, 900);
-      } else { msgDiv.textContent = data.message || 'Error submitting email. Try again.'; }
-    })
-    .catch(err => { console.error('Submission error:', err); msgDiv.textContent = 'Error submitting email. Try again later.'; });
+    const email=form.email.value.trim();
+    const name=form.name.value.trim();
+    const msgDiv=form.querySelector('.msgOdoo');
+    if(!email){ msgDiv.textContent='Please enter a valid email.'; return; }
+    msgDiv.textContent='Submitting...';
+    fetch(`${ODOO_URL}/api/email_marketing_subscribe`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':`Bearer ${API_KEY}`},
+      body:JSON.stringify({email:email,name:name,list_id:LIST_ID})
+    }).then(res=>res.json())
+      .then(data=>{
+        if(data.success||data.id){ msgDiv.textContent='Thanks! Redirecting you now...'; setTimeout(()=>{window.location.href=AFFILIATE_URL;},900);}
+        else{ msgDiv.textContent=data.message||'Error submitting email. Try again.'; }
+      }).catch(err=>{ console.error(err); msgDiv.textContent='Error submitting email. Try again later.'; });
   });
 }
+document.querySelectorAll('.optInOdoo').forEach(form=>setupOdooForm(form));
 
-// Apply to all forms
-document.querySelectorAll('.optInOdoo').forEach(form => setupOdooForm(form));
+// POPUP
+const popup=document.getElementById('popupForm');
+const popupClose=document.getElementById('popupClose');
+setTimeout(()=>{popup.style.display='block';},8000);
+document.addEventListener('mouseout',function(e){if(!popup.dataset.shown&&e.clientY<5){popup.style.display='block';popup.dataset.shown=true;}});
+popupClose.addEventListener('click',()=>{popup.style.display='none';});
 
-// Popup
-const popup = document.getElementById('popupForm');
-const popupClose = document.getElementById('popupClose');
-
-// Show popup after 5s
-setTimeout(()=>{ popup.style.display='block'; },5000);
-
-// Exit-intent trigger
-document.addEventListener('mouseout', function(e){
-  if(!popup.dataset.shown && e.clientY < 5){
-    popup.style.display = 'block';
-    popup.dataset.shown = true;
-  }
-});
-
-// Close popup
-popupClose.addEventListener('click', ()=>{ popup.style.display='none'; });
-
-// Scroll-trigger popup on blog 5
-const blog5 = document.getElementById('blog5');
-let popupShown=false;
-window.addEventListener('scroll', ()=>{
-  if(!popupShown){
-    const blog5Pos = blog5.getBoundingClientRect().top;
-    const screenMid = window.innerHeight/2;
-    if(blog5Pos < screenMid){ popup.style.display='block'; popupShown=true; }
-  }
-});
-
-// Intersection Observer for fade-in
-const observer = new IntersectionObserver(entries=>{
+// SCROLL ANIMATIONS
+const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
   });
 },{threshold:0.2});
-document.querySelectorAll('.form-container, .feature, .blog-post, .testimonial').forEach(el=>observer.observe(el));
-</script>
+document.querySelectorAll('.form-container,.blog-post').forEach(el=>observer.observe(el));
 
+// FLOATING SHAPE PARALLAX
+window.addEventListener('scroll',()=>{
+  const scrollY = window.scrollY;
+  document.querySelectorAll('.shape').forEach((s,i)=>{
+    s.style.transform=`translateY(${Math.sin(scrollY/100 + i)*20}px) translateX(${Math.cos(scrollY/100 + i)*15}px)`;
+  });
+});
+
+// BLOG IMAGE & BUTTON ANIMATIONS
+const blogObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const blogImg = entry.target.querySelector('img');
+      const btns = entry.target.querySelectorAll('button, a');
+      entry.target.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+      if(blogImg){ blogImg.style.transition = 'transform 0.6s ease, box-shadow 0.6s ease'; blogImg.style.transform = 'scale(1.05)'; setTimeout(()=>{blogImg.style.transform = 'scale(1)';}, 600);}
+      btns.forEach((b,i)=>{b.style.transition = `transform 0.5s ease ${i*0.1}s`; b.style.transform = 'translateY(-3px)'; setTimeout(()=>{b.style.transform='translateY(0)';}, 500+i*100);});
+      blogObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.blog-post').forEach(bp=>blogObserver.observe(bp));
+</script>
 </body>
 </html>
