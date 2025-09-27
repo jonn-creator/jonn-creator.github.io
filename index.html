@@ -1,129 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Audifort — Free Brain & Hearing Health Guide</title>
-  <meta name="description" content="Free Brain & Hearing Health Guide + honest Audifort review. Get the guide and discover a natural, science-backed formula to support hearing and cognitive function."/>
-  <style>
-    :root{--accent:#6366f1;--dark:#0f172a;--muted:#64748b}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:linear-gradient(180deg,#f8fafc 0%, #eef2ff 100%);color:var(--dark)}
-    .container{max-width:980px;margin:40px auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    h1{font-size:28px;margin:8px 0}
-    p.lead{color:var(--muted);margin:0}
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:28px}
-    .card{background:white;padding:20px;border-radius:12px;box-shadow:0 6px 24px rgba(15,23,42,0.06)}
-    form{display:flex;flex-direction:column;gap:12px}
-    input[type=email]{padding:12px;border:1px solid #e6edf3;border-radius:8px;font-size:16px}
-    button.cta{background:var(--accent);color:white;padding:12px;border:0;border-radius:8px;font-weight:600;cursor:pointer}
-    ul.bullets{padding-left:18px;margin:12px 0;color:var(--muted)}
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
-    .feature{background:#f8fafc;padding:12px;border-radius:10px}
-    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-    .small{font-size:13px;color:var(--muted)}
-    .link{color:var(--accent);text-decoration:none}
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.container{margin:20px;padding:16px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SharpMind Guides - Brain & Hearing Health</title>
+<style>
+  body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f6f8fa; color: #333; }
+  header { background: #4CAF50; color: #fff; padding: 40px 20px; text-align: center; }
+  header h1 { margin: 0; font-size: 2em; }
+  header p { font-size: 1.2em; margin-top: 10px; }
+  .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+  .form-container { background: #fff; padding: 20px 30px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  h2 { margin-top: 0; color: #333; }
+  input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; }
+  button { padding: 12px 20px; background: #4CAF50; color: #fff; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; transition: background 0.3s ease; }
+  button:hover { background: #45a049; }
+  .msgOdoo { margin-top: 10px; font-size: 0.9em; color: green; }
+  @media(max-width:600px){ header h1 { font-size: 1.5em; } header p { font-size: 1em; } .form-container { padding: 15px 20px; } }
+
+  /* Popup Styles */
+  #popupForm {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: none;
+    z-index: 9999;
+  }
+  #popupForm h3 { margin-top: 0; font-size: 1.2em; }
+  #popupForm button { width: 100%; }
+  #popupClose { position: absolute; top: 8px; right: 10px; background: none; border: none; font-size: 1.2em; cursor: pointer; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">AF</div>
-        <div>
-          <div class="small">Audifort Guides</div>
-          <strong>Free Brain & Hearing Health Guide</strong>
-        </div>
-      </div>
-      <nav class="small">
-        <a class="link" href="#about">About</a> · <a class="link" href="#blog">Blog</a> · <a class="link" href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <main class="grid">
-      <section>
-        <div class="card">
-          <h1>Support Sharper Mind & Clearer Hearing — Naturally</h1>
-          <p class="lead">Download your free Brain & Hearing Health Guide. Discover lifestyle changes and natural strategies that can boost focus, memory, and ear health without complicated routines.</p>
+<header>
+  <h1>SharpMind Guides</h1>
+  <p>Get Your Free Brain & Hearing Health Guide</p>
+</header>
 
-          <ul class="bullets">
-            <li>Daily tips to maintain sharp memory</li>
-            <li>Foods and habits that support hearing health</li>
-            <li>Natural ways to fight mental fog</li>
-          </ul>
-
-          <div class="features">
-            <div class="feature"><strong>Backed by science</strong><div class="small">Natural nutrients for brain & ears</div></div>
-            <div class="feature"><strong>Easy lifestyle changes</strong><div class="small">Simple tips you can start today</div></div>
-          </div>
-
-          <hr style="margin:18px 0;border:none;border-top:1px solid #eef2f6" />
-
-          <h3 id="about">About this guide</h3>
-          <p class="small">This free guide pairs perfectly with Audifort — a natural supplement that supports hearing and cognitive function. The funnel captures emails before introducing the product, so you build long-term relationships even if visitors don’t buy immediately.</p>
-        </div>
-      </section>
-
-      <aside>
-        <div class="card">
-          <h3>Get the Free Guide</h3>
-          <form id="optIn">
-            <label for="email" class="small">Enter your best email</label>
-            <input id="email" type="email" placeholder="you@example.com" required />
-            <input id="name" type="text" placeholder="First name (optional)" />
-            <button class="cta" type="submit">Send My Free Guide</button>
-            <div id="msg" class="small" style="margin-top:8px;color:var(--muted)"></div>
-          </form>
-
-          <hr style="margin:14px 0;border:none;border-top:1px solid #eef2f6" />
-
-          <div class="small">After sign-up you'll be redirected to a recommended Audifort page where you can learn more. <br><strong>Tip:</strong> Replace <code>AFFILIATE_LINK</code> in the code with your ClickBank affiliate URL.</div>
-        </div>
-
-        <div style="height:12px"></div>
-        <div class="card small">Want a custom review page, product comparison or email sequence exported to Markdown? Reply and I'll generate it.</div>
-      </aside>
-    </main>
-
-    <footer>
-      <div id="blog">Recommended posts: <a class="link" href="#">Top Foods That Boost Memory</a> · <a class="link" href="#">Audifort Honest Review</a></div>
-      <div style="margin-top:8px" id="contact">© Audifort Guides · Not medical advice. Consult a professional before using supplements.</div>
-    </footer>
+<div class="container">
+  <!-- Main Landing Form -->
+  <div class="form-container">
+    <h2>Get Your Free Guide</h2>
+    <form class="optInOdoo" data-form-name="Main Landing Form">
+      <input type="email" name="email" placeholder="Your email" required />
+      <input type="text" name="name" placeholder="First name (optional)" />
+      <button type="submit">Get My Free Guide</button>
+      <div class="msgOdoo"></div>
+    </form>
   </div>
 
-  <script>
-    // --- CONFIG: replace this with your full ClickBank affiliate URL ---
-    const AFFILIATE_URL = 'AFFILIATE_LINK';
+  <!-- Blog Post Forms (5 forms) -->
+  <div class="form-container"><h2>Blog Post 1 Signup</h2><form class="optInOdoo" data-form-name="Blog Post 1"><input type="email" name="email" placeholder="Your email" required /><input type="text" name="name" placeholder="First name (optional)" /><button type="submit">Sign Up</button><div class="msgOdoo"></div></form></div>
 
-    function saveLead(email, name){
-      const leads = JSON.parse(localStorage.getItem('leads'||'[]')) || [];
-      leads.push({email:email,name:name,ts:new Date().toISOString()});
-      localStorage.setItem('leads', JSON.stringify(leads));
-    }
+  <div class="form-container"><h2>Blog Post 2 Signup</h2><form class="optInOdoo" data-form-name="Blog Post 2"><input type="email" name="email" placeholder="Your email" required /><input type="text" name="name" placeholder="First name (optional)" /><button type="submit">Sign Up</button><div class="msgOdoo"></div></form></div>
 
-    document.getElementById('optIn').addEventListener('submit', function(e){
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const name = document.getElementById('name').value.trim();
-      if(!email){document.getElementById('msg').textContent='Please enter a valid email.';return}
-      saveLead(email,name);
-      document.getElementById('msg').textContent='Thanks! Redirecting you now...';
+  <div class="form-container"><h2>Blog Post 3 Signup</h2><form class="optInOdoo" data-form-name="Blog Post 3"><input type="email" name="email" placeholder="Your email" required /><input type="text" name="name" placeholder="First name (optional)" /><button type="submit">Sign Up</button><div class="msgOdoo"></div></form></div>
 
-      setTimeout(()=>{
-        if(AFFILIATE_URL === 'AFFILIATE_LINK'){
-          const html = `\n            <div style="position:fixed;inset:0;background:rgba(15,23,42,0.6);display:flex;align-items:center;justify-content:center">\n              <div style=\"background:white;padding:22px;border-radius:12px;max-width:560px;text-align:center\">\n                <h2>You're all set!</h2>\n                <p class=\"small\">Your free guide has been delivered to your inbox. Replace the <code>AFFILIATE_LINK</code> in the page code to enable one-click redirects to the Audifort sales page.</p>\n                <a href=\"#\" id=\"openOffer\" style=\"display:inline-block;margin-top:12px;padding:10px 16px;border-radius:8px;background:var(--accent);color:white;text-decoration:none\">View Recommended Product</a>\n                <div style=\"margin-top:10px;color:var(--muted);font-size:13px\">(This demo doesn't include your affiliate link.)</div>\n              </div>\n            </div>`;
-          document.body.insertAdjacentHTML('beforeend', html);
-          document.getElementById('openOffer').addEventListener('click', ()=>alert('Replace AFFILIATE_LINK in the page code with your ClickBank URL.'));
-        } else {
-          const url = AFFILIATE_URL.includes('?') ? AFFILIATE_URL + '&tid=' + encodeURIComponent('site_optin') : AFFILIATE_URL + '?tid=' + encodeURIComponent('site_optin');
-          window.location.href = url;
-        }
-      },900);
+  <div class="form-container"><h2>Blog Post 4 Signup</h2><form class="optInOdoo" data-form-name="Blog Post 4"><input type="email" name="email" placeholder="Your email" required /><input type="text" name="name" placeholder="First name (optional)" /><button type="submit">Sign Up</button><div class="msgOdoo"></div></form></div>
+
+  <div class="form-container"><h2>Blog Post 5 Signup</h2><form class="optInOdoo" data-form-name="Blog Post 5"><input type="email" name="email" placeholder="Your email" required /><input type="text" name="name" placeholder="First name (optional)" /><button type="submit">Sign Up</button><div class="msgOdoo"></div></form></div>
+
+</div>
+
+<!-- Popup Form -->
+<div id="popupForm">
+  <button id="popupClose">&times;</button>
+  <h3>Wait! Don’t Miss Your Free Guide!</h3>
+  <form class="optInOdoo" data-form-name="Popup Form">
+    <input type="email" name="email" placeholder="Your email" required />
+    <input type="text" name="name" placeholder="First name (optional)" />
+    <button type="submit">Sign Up Now</button>
+    <div class="msgOdoo"></div>
+  </form>
+</div>
+
+<script>
+const AFFILIATE_URL = 'https://6c63eby7so29wk6y11m6vk-m6h.hop.clickbank.net';
+const ODOO_URL = 'https://sharpmindguidescom.odoo.com';
+const API_KEY = '74a3b8f5ea170a909ee67094d08c33864bea0e6c';
+const LIST_ID = '2';
+
+// Function to handle all forms with conversion tracking
+function setupOdooForm(form){
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = form.email.value.trim();
+    const name = form.name.value.trim();
+    const msgDiv = form.querySelector('.msgOdoo');
+    const formName = form.dataset.formName;
+
+    // Submit to Odoo
+    fetch(`${ODOO_URL}/api/email_marketing_subscribe`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({ email: email, name: name, list_id: LIST_ID })
+    }).then(res => {
+      if(res.ok){
+        msgDiv.textContent = 'Thanks! Redirecting you now...';
+
+        // Conversion Tracking
+        console.log(`Conversion from form: ${formName}, Email: ${email}`);
+
+        // Redirect
+        setTimeout(()=>{ window.location.href = AFFILIATE_URL }, 900);
+      } else {
+        msgDiv.textContent = 'Error submitting email. Try again.';
+      }
+    }).catch(err => {
+      msgDiv.textContent = 'Error submitting email. Try again.';
     });
-  </script>
+  });
+}
+
+// Apply to all forms
+document.querySelectorAll('.optInOdoo').forEach(form => setupOdooForm(form));
+
+// Popup logic
+const popup = document.getElementById('popupForm');
+const popupClose = document.getElementById('popupClose');
+
+// Show popup after 5 seconds
+setTimeout(()=>{ popup.style.display = 'block'; }, 5000);
+
+// Exit-intent trigger
+document.addEventListener('mouseout', function(e){
+  if(!popup.dataset.shown && e.clientY < 5){
+    popup.style.display = 'block';
+    popup.dataset.shown = true;
+  }
+});
+
+// Close popup
+popupClose.addEventListener('click', ()=>{ popup.style.display = 'none'; });
+</script>
+
 </body>
 </html>
+
